@@ -92,27 +92,67 @@ import Avatar from '../../components/Avatar';
 import Circles from "../../components/Circles"
 import {motion} from "framer-motion";
 /*import {fadeIn} from "../../variants";*/
-
+import CountUp  from 'react-countup';
 
 const About = () => {
   const [index, setIndex]=useState(0);
   console.log(index);
   return(<div className='h-full bg-primary/30 py-32 text-center xl:text-left '>
-  {/*<Circles />*/}
+  <Circles />
 
     <div
       className='hidden xl:flex absolute bottom-0 left-[370px]'>
     <Avatar />
+     </div>
+        <div className='container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'
+          >
+          <div className='flex-1 flex flex-col justify-center'>
+            <h2 className='h2'> <span className='text-accent'>قصص </span> مذهلة ولدت تصاميم ساحرة 
+             </h2>
+                <p className='max-w-[500px] mx-auto xl:mx-0 mb-4   xl:mb-12 px-2 xl:px-0  '>قبل 10 سنوات، بدأت العمل كمصمم جرافيك و مطور مستقل. منذ ذلك الحين، قمت بعمل عن بُعد لوكالات، و للشركات الناشئة، وتعاونت في إنتاج المنتجات الرقمية للاستخدام التجاري واستخدام المستهلكين.   </p>
+                  {/**cocounters */}
+                  <div> 
+                  <div className='flex flex-row container '> 
+                    {/*experience*/}
+                  <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 
+      after:absolute after:top-0 after:right-0  '>  
+      <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2  '> 
+        <CountUp start={0} end={10} duration={5}/>+
+      </div>
+      <div className='text-xs uppercase trackingtracking-widtrackingtracking-[1px] leading-[1.4] max-w-[100px ]/>ة</div>
+       </div>
+      
+       <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 
+      after:absolute after:top-0 after:right-0'>  
+      <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2 '> 
+        <CountUp start={0} end={259} duration={5}/>+
+      </div>
+      <div className='text-xs uppercase trackingtracking-widtrackingtracking-[1px] leading-[1.4] max-w-[100px ]'>عملاء راضيين </div>
+       </div>
+
+<div className='relative  flex-1 after:w-[1px] after:h-full after:bg-white/10 
+
+after:absolute after:top-0 after:right-0'> 
+
+<div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2 '> 
+
+<CountUp start={0} end={10} duration={5}/>+
+
+</div>
+<div className='text-xs uppuppercase trackingtracking-widtrackingtracking-[1px] leading-[1.4] max-w-[100px ]'>سنوات الخبرة</div>
+
+</div>
+
+
+      </div>
+     </div>
     </div>
-    <div className='container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'
-      >
-    <div className='flex-1 flex flex-col justify-center'>text</div>
       <div className='flex flex-col w-full xl:max-w-[48%] h-[480px] '>
       <div className='flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4 '>
         {aboutData.map((item,itemIndex)=>{  return (
         <div 
           key={itemIndex}
-          className={`${index === itemIndex && 'text-accent after:w-[100%] bg-accent after:transition-all after:duration-300'}cursor-pointer capitalize xl:text-lg relative after:w-8
+          className={`${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'}cursor-pointer capitalize xl:text-lg relative after:w-8
  after:h-[2px] after:bg-white after:absolute after:bottom-1 after:left-0`} onClick={()=>setIndex(itemIndex)}
           >{item.title}</div>
         )
